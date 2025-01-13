@@ -2,11 +2,11 @@ import { BaseFilter, Item } from "https://deno.land/x/ddc_vim@v4.3.1/types.ts";
 import { FilterArguments } from "https://deno.land/x/ddc_vim@v4.3.1/base/filter.ts";
 
 function isLower(c: string): boolean {
-  return /^[a-z]$/g.test(c);
+  return /^[a-záéíóúöüőű]$/g.test(c);
 }
 
 function isUpper(c: string): boolean {
-  return /^[A-Z]$/g.test(c);
+  return /^[A-ZÁÉÍÓÚÖÜŐŰ]$/g.test(c);
 }
 
 type Params = Record<string, never>;
