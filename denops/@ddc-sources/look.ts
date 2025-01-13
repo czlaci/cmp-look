@@ -22,11 +22,11 @@ async function run(cmd: string, args: string[]): Promise<string> {
 }
 
 function isLower(c: string): boolean {
-  return /^[a-z]$/g.test(c);
+  return /^[a-záéíóúöüőű]$/g.test(c);
 }
 
 function isUpper(c: string): boolean {
-  return /^[A-Z]$/g.test(c);
+  return /^[A-ZÁÉÍÓÚÖÜŐŰ]$/g.test(c);
 }
 
 type Case = {
@@ -99,7 +99,7 @@ function construct_args(
     args = ["--", q];
   }
   if (dflag) {
-    const alphanumeric = q.replace(/[^a-zA-Z0-9]/g, "");
+    const alphanumeric = q.replace(/[^a-zA-Z0-9áéíóúöüőűÁÉÍÓÚÖÜŐŰ]/g, "");
     if (alphanumeric.length < len) {
       return null;
     }
